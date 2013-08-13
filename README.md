@@ -67,7 +67,7 @@ Thing | Purpose
 ???? | disk storage... which for photos might be a lot
 [Django](https://www.djangoproject.com/) | server backend, but I only plan to use the models and the ORM
 [Tastypie](https://github.com/toastdriven/django-tastypie) | API
-[Backbone](http://backbonejs.org/) and [Marionette](https://github.com/marionettejs/backbone.marionette) | front-end app framework
+[Backbone](http://backbonejs.org/) and [Marionette](https://github.com/marionettejs/backbone.marionette) | front end app framework
 [requirejs](http://requirejs.org/) | front end module loader
 [Bower](https://github.com/bower/bower) | front end package management
 [Bootstrap](http://getbootstrap.com/) | css to make things pretty
