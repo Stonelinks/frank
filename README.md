@@ -43,7 +43,9 @@ I'd like to avoid client apps for a phone or tablet if at all possible, but I su
 
 
 ##So where does that leave us?
-So after an hour of initial brainstorming, I have come to realize that this is basically me bitching about various pieces of technology and frank has pretty much manifested himself out of my collective dislike them. A lot of these apps already out there do okay, but are made by some very smart engineers and companies. Kind of silly to think that I can really do any better than them, but hey whatever man nobody is forcing you to use this. I'm still going to go ahead and try to make frank a good piece of software. If you want to help me out great! Even if I fall flat on my face and frank sucks something useful is still bound to come out of this.
+So after an hour of initial brainstorming, I have come to realize that frank has come into existence because I've been bitching about my dislike for various pieces of technology out there and have finally worked up the gumption to do something about it.
+
+So yeah frank has been born of hate of other products, and a lot of these products have been made by some very smart engineers and companies. Kind of silly to think that I can really do any better than them. Oh well whatever nobody is forcing you to use this. Also it's open source! so you can do whatever with this. I'm still going to go ahead and try to make frank work. Maybe there are some other like minded individuals out there reading this that also feel the same way and want to help out. Send me a pull request and lets make it happen! Even if I fall flat on my face and frank sucks, something useful is still bound to come out of this.
 
 
 ##FAQ
