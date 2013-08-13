@@ -2,14 +2,14 @@
 
 Personal, omniscient life assistant. Also a pretty cool guy.
 
-I'm making frank because I suck at keeping track of my shit. Realistically, I know I'm too lazy to actually put the effort into changing this about myself, so instead I thought it would be much more useful (and more fun) to engineer a tool that keeps track of stuff for me. 
+I'm making frank because I suck at keeping track of my shit. Realistically, I know I'm too lazy to actually put the effort into changing this about myself, so instead I thought it would be much more useful (and more fun) to engineer a tool that keeps track of stuff for me.
 
 So what kind of things will frank keep track of? Nothing the NSA doesn't already know (heyyyoooo!) but for real right now it keeps track of jack squat. Eventually I want it to support the things in the rest of this document. Each these things would ideally be modules you could enable, disable and configure as part of frank.
 
 
 ###Budget
 
-Right now this is my most pressing need. Back when I lived in America I could keep pretty good tabs on my finances using the excellent mint.com. I used it for what are in my opinion really basic things:
+Right now this is my most pressing need. Back when I lived in America I could keep pretty good tabs on my finances using the excellent [mint.com](https://www.mint.com/). I used it for what are in my opinion really basic things:
 
 - Getting a quick idea of how much is in my accounts
 - Where and what types of things I spend money
@@ -24,7 +24,7 @@ Obviously keeping track of transactions is a lot of data input. Thats why I want
 
 This idea is still a little half-baked, but I'm not happy with the current products out there that sync/backup photos from the various devices I take them on. I take a fair amount of photos and find it pretty annoying that they are not accessible across every piece of electronic equipment I own. This situation happens to me a fair amount:
 
-I want to show someone a photo because it is relevant to a conversation we're having. While still trying to talk to them, I thumb through the gallery on my phone trying to find said picture, but once I realize it isn't there I remember it is on my tablet (which is at home). Okay... well it should still be synced with dropbox right? Well not always. Also dropbox is harder to search than facebook. So okay maybe I posted it to facebook. I go to facebook and try to search, but facebook's app is slow or I don't have internet or by this time the conversation has moved on to a different subject.
+I want to show someone a photo because it is relevant to a conversation we're having. While still trying to talk to them, I thumb through the gallery on my phone trying to find said picture, but once I realize it isn't there I remember it is on my tablet (which is at home). Okay... well it should still be synced with Dropbox right? Well not always. Also Dropbox is harder to search than facebook. So okay maybe I posted it to facebook. I go to facebook and try to search, but facebook's app is slow or I don't have internet or by this time the conversation has moved on to a different subject.
 
 I know it sounds like whining about a first world problem, but it's 2013 dammit. If I take a photo on my phone, I should be able to look at it later on my tablet, and vice versa. Dropbox and G+ kind of do an okay job at this, but Dropbox limits my space and I don't like having ALL my photos tied to G+, a social network that I don't use. Also neither of these things will make your photos directly available on your other devices! You have to go out of your way to download them, which sucks in a bandwidth constrained environment.
 
@@ -33,7 +33,7 @@ So I'd like frank to take care of this somehow. Like some kind of ghetto rsync c
 
 ###Runs
 
-I run a fair amount, and in the past two months the app I use to keep track of my running stats (strava) has been sucking hard. It won't acquire a GPS signal until about halfway through my runs, which didn't start happening until a couple months ago when they must have pushed some major updates to the app that broke it. Anyways strava is the lastest in a long line of running apps that have tried and been disappointed in. All apps have some kind of bullshit you have to put up with. I'd like just tell frank I'm going on a run, and he keeps track of my GPS until I tell him I'm done. I pretty much want to know three simple things when it comes to my runs: tell me where I ran, how far I ran, and what my pace was. That is it.
+I run a fair amount, and in the past two months the app I use to keep track of my running stats ([strava](http://www.strava.com/)) has been sucking hard. It won't acquire a GPS signal until about halfway through my runs, which didn't start happening until a couple months ago when they must have pushed some major updates to the app that broke it. Anyways strava is the lastest in a long line of running apps that have tried and been disappointed in. All apps have some kind of bullshit you have to put up with. I'd like just tell frank I'm going on a run, and he keeps track of my GPS until I tell him I'm done. I pretty much want to know three simple things when it comes to my runs: tell me where I ran, how far I ran, and what my pace was. That is it.
 
 
 ##Natural interface
@@ -51,7 +51,7 @@ So yeah frank has been born of hate of other products, and a lot of these produc
 ##FAQ
 
 **Q: what inspired frank?**
-**A:** my own laziness/inability to keep track of what goes on my life, my collective distaste for a bunch of existing apps and of course JARVIS
+**A:** my own laziness/inability to keep track of what goes on my life, my collective distaste for a bunch of existing apps, [hubot](https://github.com/github/hubot) and of course [JARVIS](http://en.wikipedia.org/wiki/Edwin_Jarvis#J.A.R.V.I.S.)
 
 **Q: why did you name it frank?**
 
@@ -63,11 +63,12 @@ So yeah frank has been born of hate of other products, and a lot of these produc
 
 Thing | Purpose
 --- | ---
-Heroku | host
-Django | server backend, but I only plan to use the models and the ORM
-Django Tastypie | API
-Backbone and Marionette | front-end app framework
-requirejs | front end module loader
-Bower | front end package management
-Bootstrap | make things pretty
-xmpp | chat stuff
+[Heroku](http://www.heroku.com/) | host most of everything
+???? | disk storage... which for photos might be a lot
+[Django](https://www.djangoproject.com/) | server backend, but I only plan to use the models and the ORM
+[Tastypie](https://github.com/toastdriven/django-tastypie) | API
+[Backbone](http://backbonejs.org/) and [Marionette](https://github.com/marionettejs/backbone.marionette) | front-end app framework
+[requirejs](http://requirejs.org/) | front end module loader
+[Bower](https://github.com/bower/bower) | front end package management
+[Bootstrap](http://getbootstrap.com/) | css to make things pretty
+xmpp | chat stuff??
