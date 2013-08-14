@@ -51,6 +51,7 @@ So yeah frank has been born of hate of other products, and a lot of these produc
 ##FAQ
 
 **Q: what inspired frank?**
+
 **A:** my own laziness/inability to keep track of what goes on my life, my collective distaste for a bunch of existing apps, [hubot](https://github.com/github/hubot) and of course [JARVIS](http://en.wikipedia.org/wiki/Edwin_Jarvis#J.A.R.V.I.S.)
 
 **Q: why did you name it frank?**
