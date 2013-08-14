@@ -35,6 +35,11 @@ So I'd like frank to take care of this somehow. Like some kind of ghetto rsync c
 
 I run a fair amount, and in the past two months the app I use to keep track of my running stats ([strava](http://www.strava.com/)) has been sucking hard. It won't acquire a GPS signal until about halfway through my runs, which didn't start happening until a couple months ago when they must have pushed some major updates to the app that broke it. Anyways strava is the lastest in a long line of running apps that have tried and been disappointed in. All apps have some kind of bullshit you have to put up with. I'd like just tell frank I'm going on a run, and he keeps track of my GPS until I tell him I'm done. I pretty much want to know three simple things when it comes to my runs: tell me where I ran, how far I ran, and what my pace was. That is it.
 
+###...and probably more
+I guess once this thing gets off the ground it could be used for a menagerie of other things:
+- Calendar notifications, alarms and alerts (a la Siri)
+- Torrent / download things
+- Home automation
 
 ##Natural interface
 Of paramount importance is the ability to easily interact with frank. Ideally you'd interact with him like you would a personal assistant, through chats or text messages, maybe email. I'll still make a web interface for data input, but for day to day interaction with frank I don't want to dick around with spreadsheets or forms or any of that crap. However, when reading information from frank, I'd like that to be done through a web browser. Most of what I want to see will be in the form of charts anyways.
