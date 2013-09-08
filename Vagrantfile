@@ -6,6 +6,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 3000, 3000
 
   config.vm.share_folder "frank-server", "/home/vagrant/frank-server", "frank-server"
+  config.vm.share_folder "node_modules", "/home/vagrant/node_modules", "node_modules"
 
   # Uncomment the following line to allow for symlinks
   # in the app folder. This will not work on Windows, and will

@@ -1,1 +1,1 @@
-web: gunicorn frank.wsgi
+web: node frank-server/server.js
