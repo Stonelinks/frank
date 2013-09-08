@@ -17,7 +17,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "nodejs"
     chef.json = {
       "nodejs" => {
-        "version" => "0.10.18"
+        "version" => "0.10.17"
         # , "from_source" => true
       }
     }
