@@ -1,0 +1,3 @@
+# dev environment vars
+# production environment vars are in .env, which is kept out of git because they contain secrets
+DB_URL=postgres://frank:password@localhost:5432/frank

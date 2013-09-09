@@ -1,5 +1,3 @@
-HERE = File.join(File.dirname(__FILE__))
-
 Vagrant::Config.run do |config|
 
   config.vm.box = "precise64"
@@ -16,13 +14,18 @@ Vagrant::Config.run do |config|
   # config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/frank-server", "1"]
   
   config.vm.forward_port 5432, 54322
-  config.vm.forward_port 3000, 3000
+  config.vm.forward_port 5000, 5000
   
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = File.join(HERE, 'cookbooks')
+    chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
+    
     chef.add_recipe "apt"
-    chef.add_recipe "postgresql::server"
     chef.add_recipe "nodejs"
+
+    chef.add_recipe "postgresql::server"
+    chef.add_recipe "postgresql::ruby"
+    chef.add_recipe "database::setup"
+
     chef.json = {
       :development => true,
       :nodejs => {
@@ -49,9 +52,20 @@ Vagrant::Config.run do |config|
             :addr => '::1/0',
             :method => 'md5'
           }
-        ]
+        ],
+        :password => {
+          
+          :postgres_unhashed => 'password',
+          :postgres => 'md532e12f215ba27cb750c9e093ce4b5127'
+        }
       }
     }
+  end
+  
+  # install foreman
+  # there has got to be a better way of doing this...
+  config.vm.provision "shell" do |s|
+    s.inline = "sudo bash -c '/opt/vagrant_ruby/bin/gem install foreman'"
   end
 
 end
