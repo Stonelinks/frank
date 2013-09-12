@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Frank by Stonelinks</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Frank</h1>
+        <h2>Personal, omniscient life assistant. Also a pretty cool guy.</h2>
+        <a href="https://github.com/Stonelinks/frank" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>I'm making frank because I suck at keeping track of my shit. Realistically, I know I'm too lazy to actually put the effort into changing this about myself, so instead I thought it would be much more useful (and more fun) to engineer a tool that keeps track of stuff for me.</p>
+
+<p>So what kind of things will frank keep track of? Nothing the NSA doesn't already know (heyyyoooo!) but for real right now it keeps track of jack squat. Eventually I want it to support the things in the rest of this document. Each these things would ideally be modules you could enable, disable and configure as part of frank.</p>
+
+<h3>
+<a name="budget" class="anchor" href="#budget"><span class="octicon octicon-link"></span></a>Budget</h3>
+
+<p>Right now this is my most pressing need. Back when I lived in America I could keep pretty good tabs on my finances using the excellent <a href="https://www.mint.com/">mint.com</a>. I used it for what are in my opinion really basic things:</p>
+
+<ul>
+<li>Getting a quick idea of how much is in my accounts</li>
+<li>Where and what types of things I spend money</li>
+<li>How my spending changes from month to month</li>
+</ul><p>So now that I live in Japan, I can't really use mint anymore since it doesn't work with Japanese banks and all my transactions are cash anyways. Right now in a frank-less world I basically spend a crapload of money while operating in a vacuum of information so I have no clue if my habits are actually good or not... So I want frank to be able figure that out for me, or at least present me with some information to help me figure it out.</p>
+
+<p>Obviously keeping track of transactions is a lot of data input. Thats why I want to make it as easy as possible to interact with frank (more on that later). I pretty much want to send something like "900 yen beer" to frank and have him take care of the rest of the details. Some of you are probably thinking "just use a spreadsheet you lazy ass". My response to that is it is too much work and would force me to maintain a large and potentially intricate document given the granularity of data and the metrics I care about. But I agree if I wasn't a lazy ass I could probably do it with a spreadsheet but I want to give it a shot with frank first.</p>
+
+<h3>
+<a name="photostream-and-photo-syncing" class="anchor" href="#photostream-and-photo-syncing"><span class="octicon octicon-link"></span></a>Photostream and photo syncing</h3>
+
+<p>This idea is still a little half-baked, but I'm not happy with the current products out there that sync/backup photos from the various devices I take them on. I take a fair amount of photos and find it pretty annoying that they are not accessible across every piece of electronic equipment I own. This situation happens to me a fair amount:</p>
+
+<p>I want to show someone a photo because it is relevant to a conversation we're having. While still trying to talk to them, I thumb through the gallery on my phone trying to find said picture, but once I realize it isn't there I remember it is on my tablet (which is at home). Okay... well it should still be synced with Dropbox right? Well not always. Also Dropbox is harder to search than facebook. So okay maybe I posted it to facebook. I go to facebook and try to search, but facebook's app is slow or I don't have internet or by this time the conversation has moved on to a different subject.</p>
+
+<p>I know it sounds like whining about a first world problem, but it's 2013 dammit. If I take a photo on my phone, I should be able to look at it later on my tablet, and vice versa. Dropbox and G+ kind of do an okay job at this, but Dropbox limits my space and I don't like having ALL my photos tied to G+, a social network that I don't use. Also neither of these things will make your photos directly available on your other devices! You have to go out of your way to download them, which sucks in a bandwidth constrained environment.</p>
+
+<p>So I'd like frank to take care of this somehow. Like some kind of ghetto rsync copy thing using HTTP over wifi would be fine.</p>
+
+<h3>
+<a name="runs" class="anchor" href="#runs"><span class="octicon octicon-link"></span></a>Runs</h3>
+
+<p>I run a fair amount, and in the past two months the app I use to keep track of my running stats (<a href="http://www.strava.com/">strava</a>) has been sucking hard. It won't acquire a GPS signal until about halfway through my runs, which didn't start happening until a couple months ago when they must have pushed some major updates to the app that broke it. Anyways strava is the lastest in a long line of running apps that have tried and been disappointed in. All apps have some kind of bullshit you have to put up with. I'd like just tell frank I'm going on a run, and he keeps track of my GPS until I tell him I'm done. I pretty much want to know three simple things when it comes to my runs: tell me where I ran, how far I ran, and what my pace was. That is it.</p>
+
+<h3>
+<a name="and-probably-more" class="anchor" href="#and-probably-more"><span class="octicon octicon-link"></span></a>...and probably more</h3>
+
+<p>I guess once this thing gets off the ground it could be used for a menagerie of other things:</p>
+
+<ul>
+<li>Calendar notifications, alarms and alerts (a la Siri)</li>
+<li>Torrent / download things</li>
+<li>Home automation</li>
+</ul><h2>
+<a name="natural-interface" class="anchor" href="#natural-interface"><span class="octicon octicon-link"></span></a>Natural interface</h2>
+
+<p>Of paramount importance is the ability to easily interact with frank. Ideally you'd interact with him like you would a personal assistant, through chats or text messages, maybe email. I'll still make a web interface for data input, but for day to day interaction with frank I don't want to dick around with spreadsheets or forms or any of that crap. However, when reading information from frank, I'd like that to be done through a web browser. Most of what I want to see will be in the form of charts anyways.</p>
+
+<p>I'd like to avoid client apps for a phone or tablet if at all possible, but I suspect some types of data input can't be done through chat or a mobile web browser. If there doesn't end up being any sort of client app on my phone I'd like explicit control of what frank is paying attention to, and I'd like it to be ludicrously simple to use.</p>
+
+<h2>
+<a name="so-where-does-that-leave-us" class="anchor" href="#so-where-does-that-leave-us"><span class="octicon octicon-link"></span></a>So where does that leave us?</h2>
+
+<p>So after an hour of initial brainstorming, I have come to realize that frank has come into existence because I've been bitching about my dislike for various pieces of technology out there and have finally worked up the gumption to do something about it.</p>
+
+<p>So yeah frank has been born of hate of other products, and a lot of these products have been made by some very smart engineers and companies. Kind of silly to think that I can really do any better than them. Oh well whatever nobody is forcing you to use this. Also it's open source! so you can do whatever with this. I'm still going to go ahead and try to make frank work. Maybe there are some other like minded individuals out there reading this that also feel the same way and want to help out. Send me a pull request and lets make it happen! Even if I fall flat on my face and frank sucks, something useful is still bound to come out of this.</p>
+
+<h2>
+<a name="faq" class="anchor" href="#faq"><span class="octicon octicon-link"></span></a>FAQ</h2>
+
+<p><strong>Q: what inspired frank?</strong></p>
+
+<p><strong>A:</strong> my own laziness/inability to keep track of what goes on my life, my collective distaste for a bunch of existing apps, <a href="https://github.com/github/hubot">hubot</a> and of course <a href="http://en.wikipedia.org/wiki/Edwin_Jarvis#J.A.R.V.I.S.">JARVIS</a></p>
+
+<p><strong>Q: why did you name it frank?</strong></p>
+
+<p><strong>A:</strong> because frank is clearly an awesome name</p>
+
+<p><strong>Q: what powers frank?</strong></p>
+
+<p><strong>A:</strong> The planned stack for frank is as follows (in no particular order):</p>
+
+<table>
+<thead><tr>
+<th>Thing</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="http://www.heroku.com/">Heroku</a></td>
+<td>host most of everything</td>
+</tr>
+<tr>
+<td>????</td>
+<td>disk storage... which for photos might be a lot</td>
+</tr>
+<tr>
+<td><a href="https://www.djangoproject.com/">Django</a></td>
+<td>server backend, but I only plan to use the models and the ORM</td>
+</tr>
+<tr>
+<td><a href="https://github.com/toastdriven/django-tastypie">Tastypie</a></td>
+<td>API</td>
+</tr>
+<tr>
+<td>
+<a href="http://backbonejs.org/">Backbone</a> and <a href="https://github.com/marionettejs/backbone.marionette">Marionette</a>
+</td>
+<td>front end app framework</td>
+</tr>
+<tr>
+<td><a href="http://requirejs.org/">requirejs</a></td>
+<td>front end module loader</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bower/bower">Bower</a></td>
+<td>front end package management</td>
+</tr>
+<tr>
+<td><a href="http://getbootstrap.com/">Bootstrap</a></td>
+<td>css to make things pretty</td>
+</tr>
+<tr>
+<td>xmpp</td>
+<td>chat stuff??</td>
+</tr>
+</tbody>
+</table>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Stonelinks/frank/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Stonelinks/frank/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Stonelinks/frank"></a> is maintained by <a href="https://github.com/Stonelinks">Stonelinks</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
