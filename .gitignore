@@ -1,6 +1,7 @@
-*~
-.DS_Store
-.vagrant
 node_modules
-
-.env
+temp
+dist
+.sass-cache
+app/bower_components
+.tmp/
+.vagrant/
