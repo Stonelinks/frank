@@ -25,54 +25,25 @@ class must-have {
     require => Exec["apt-get update 2"],
   }
 
-  exec { 'install yeoman':
-    command => '/usr/bin/npm install -g yo grunt-cli bower phantomjs',
+  exec { 'install npm deps':
+    command => '/usr/bin/npm install -g yo grunt-cli bower mocha-phantomjs phantomjs',
     creates => [
       '/usr/lib/node_modules/bower/bin/bower',
       '/usr/lib/node_modules/yo/bin/yo',
       '/usr/lib/node_modules/grunt-cli/bin/grunt',
+      '/usr/lib/node_modules/mocha-phantomjs/bin/mocha-phantomjs',
       '/usr/lib/node_modules/phantomjs/bin/phantomjs'
       ],
     require => [ Exec["apt-get update 2"], Package["nodejs"] ],
   }
 
-  exec { 'install webapp generator':
-    command => '/usr/bin/npm install -g generator-webapp',
-    creates => '/usr/lib/node_modules/generator-webapp',
-    require => Exec["install yeoman"],
-  }
-
-  file { "/home/vagrant/yeoman/webapp":
-      ensure => "directory",
-      before => Exec['create webapp site'],
-      require => Exec['install webapp generator'],
-  }
-
-  exec { 'create webapp site':
-    command => '/usr/bin/yes | /usr/lib/node_modules/yo/bin/yo webapp',
-    cwd => '/home/vagrant/yeoman/webapp',
-    creates => '/home/vagrant/yeoman/webapp/app',
-    require => File["/home/vagrant/yeoman/webapp"],
-  }
-
-  file_line { "update hostname in gruntfile": 
-    line => "                hostname: '0.0.0.0'", 
-    path => "/home/vagrant/yeoman/webapp/Gruntfile.js", 
-    match => "hostname: '.*'", 
-    ensure => present,
-    require => Exec["create webapp site"],
-  }
-
-  package { ["vim",
-             "bash",
+  package { ["bash",
              "nodejs",
              "git-core",
              "fontconfig"]:
     ensure => present,
     require => Exec["apt-get update 2"],
   }
-
-
 }
 
 include must-have
