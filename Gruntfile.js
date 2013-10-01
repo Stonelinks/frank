@@ -1,6 +1,6 @@
 'use strict';
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
+var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 
@@ -11,7 +11,7 @@ var mountFolder = function (connect, dir) {
 // 'test/spec/**/*.js'
 // templateFramework: 'handlebars'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -26,21 +26,21 @@ module.exports = function (grunt) {
 
     // watch list
     watch: {
-      
+
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass']
       },
-      
+
       livereload: {
         files: [
-          
+
           '<%= yeoman.app %>/*.html',
           '{.tmp,<%= yeoman.app %>}/styles/{,**/}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,**/}*.js',
           '{.tmp,<%= yeoman.app %>}/templates/{,**/}*.hbs',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-          
+
           'test/spec/{,**/}*.js'
         ],
         tasks: ['exec'],
@@ -76,7 +76,7 @@ module.exports = function (grunt) {
       }
     },
 
-    
+
     // express app
     express: {
       options: {
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
 
     // open app and test page
     open: {
@@ -126,7 +126,7 @@ module.exports = function (grunt) {
       ]
     },
 
-    
+
     // compass
     compass: {
       options: {
@@ -169,7 +169,7 @@ module.exports = function (grunt) {
           pragmasOnSave: {
             //removes Handlebars.Parser code (used to compile template strings) set
             //it to `false` if you need to parse template strings even after build
-            excludeHbsParser : true,
+            excludeHbsParser: true,
             // kills the entire plugin set once it's built.
             excludeHbs: true,
             // removes i18n precompiler, handlebars and json2
@@ -275,18 +275,18 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('createDefaultTemplate', function () {
+  grunt.registerTask('createDefaultTemplate', function() {
     grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
   });
 
   // starts express server with live testing via testserver
-  grunt.registerTask('default', function (target) {
+  grunt.registerTask('default', function(target) {
 
     // what is this??
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
     }
-    
+
     grunt.log.writeln('Target is ' + target);
 
     grunt.option('force', true);

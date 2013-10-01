@@ -33,14 +33,11 @@ class must-have {
       '/usr/lib/node_modules/grunt-cli/bin/grunt',
       '/usr/lib/node_modules/mocha-phantomjs/bin/mocha-phantomjs',
       '/usr/lib/node_modules/phantomjs/bin/phantomjs'
-      ],
+    ],
     require => [ Exec["apt-get update 2"], Package["nodejs"] ],
   }
 
-  package { ["bash",
-             "nodejs",
-             "git-core",
-             "fontconfig"]:
+  package {["build-essential", "bash", "mongodb", "nodejs", "git-core", "fontconfig"]:
     ensure => present,
     require => Exec["apt-get update 2"],
   }
